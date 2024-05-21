@@ -3,9 +3,7 @@ import { UserGenerator } from './users/user.generator';
 import { ProductGenerator } from './products/product.generator';
 import { ProductUserGenerator } from './products/product-user.generator';
 
-export const exec = async () => {
-  const prismaService = new PrismaService();
-
+export const generateMockData = async (prismaService: PrismaService) => {
   const mockUsers = new UserGenerator(300);
   await mockUsers.insertUserToDB(prismaService);
 
